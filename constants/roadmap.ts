@@ -39,7 +39,7 @@ export const phases: Phase[] = [
       {
         id: 'cs50',
         name: 'CS50x - Harvard Computer Science',
-        resourceLink: 'https://cs50.harvard.edu/x/2024/',
+        resourceLink: 'https://cs50.harvard.edu/x/',
         label: 'Video',
         completed: false,
       },
@@ -454,7 +454,7 @@ export const phases: Phase[] = [
       {
         id: 'system-design',
         title: 'System Design Interview',
-        youtubeId: 'quLrc3P1A7E',
+        youtubeId: 'F2FmTdLtb_4',
       },
     ],
     eliteChallenge: {
