@@ -17,15 +17,10 @@ interface PhaseSectionProps {
   };
   onToggleConcept: (conceptId: string) => void;
   isConceptCompleted: (conceptId: string) => boolean;
-  defaultExpanded?: boolean; // Allow first phase to be expanded by default
+  defaultExpanded?: boolean; 
 }
 
-/**
- * PhaseSection component displays a phase as an accordion.
- * Header (title, badges, progress) is always visible.
- * Content (concepts, videos, challenge) expands/collapses with smooth animation.
- * Uses Framer Motion for transitions.
- */
+
 export default function PhaseSection({
   phase,
   phaseProgress,
@@ -43,7 +38,6 @@ export default function PhaseSection({
 
   return (
     <section className="bg-notion-sidebar border border-notion-border rounded-lg overflow-hidden">
-      {/* Phase Header - Always visible */}
       <button
         onClick={toggleExpanded}
         className="w-full text-left p-6 hover:bg-notion-sidebar/80 transition-colors group"
@@ -59,7 +53,6 @@ export default function PhaseSection({
               )}
             </div>
 
-            {/* Core Concepts Badges */}
             {phase.coreConcepts && phase.coreConcepts.length > 0 && (
               <div className="flex flex-wrap gap-2 mb-4">
                 {phase.coreConcepts.map((concept) => (
@@ -73,7 +66,6 @@ export default function PhaseSection({
               </div>
             )}
 
-            {/* Phase Progress Bar */}
             <PhaseProgressBar
               progress={phaseProgress.progress}
               completedCount={phaseProgress.completedCount}
@@ -81,7 +73,6 @@ export default function PhaseSection({
             />
           </div>
 
-          {/* Chevron Icon */}
           <ChevronDown
             size={20}
             className={`text-notion-text-secondary group-hover:text-notion-text flex-shrink-0 transition-all duration-200 ${
@@ -91,18 +82,16 @@ export default function PhaseSection({
         </div>
       </button>
 
-      {/* Expandable Content */}
       <AnimatePresence>
         {isExpanded && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.2, ease: 'easeInOut' }}
+            transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
             className="overflow-hidden"
           >
             <div className="px-6 pb-6 pt-4 space-y-8 border-t border-notion-border">
-              {/* Concepts in Accordion Layout */}
               <div className="space-y-4">
                 <h3 className="text-lg font-medium text-notion-text">Learning Path</h3>
                 <ConceptTable
@@ -112,7 +101,6 @@ export default function PhaseSection({
                 />
               </div>
 
-              {/* Video Gallery */}
               {phase.videos.length > 0 && (
                 <div className="space-y-4">
                   <h3 className="text-lg font-medium text-notion-text">Video Gallery</h3>
@@ -140,7 +128,6 @@ export default function PhaseSection({
                 </div>
               )}
 
-              {/* Elite Challenge */}
               <div>
                 <ProjectCard challenge={phase.eliteChallenge} />
               </div>

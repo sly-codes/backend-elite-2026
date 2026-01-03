@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Backend Elite 2026 - Java Backend Roadmap',
   description: 'Complete Java Backend Development Roadmap Tracker for 2026',
   icons: {
-    icon: '/spring.svg',
+    icon: '/favicon.svg',
   },
 };
 

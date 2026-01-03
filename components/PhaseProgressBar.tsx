@@ -1,9 +1,6 @@
 'use client';
 
 /**
- * PhaseProgressBar component displays progress for a specific phase.
- * Shows completion percentage and number of completed concepts.
- * 
  * @param progress - Percentage value (0-100) for this phase
  * @param completedCount - Number of completed concepts in this phase
  * @param totalCount - Total number of concepts in this phase
@@ -34,10 +31,13 @@ export default function PhaseProgressBar({
           </span>
         </div>
       )}
-      <div className="w-full h-1.5 bg-[#222222] rounded-full overflow-hidden">
+      <div className="w-full h-1.5 bg-notion-sidebar rounded-full overflow-hidden">
         <div
-          className="h-full bg-notion-text transition-all duration-500 ease-out"
-          style={{ width: `${clampedProgress}%` }}
+          className="h-full transition-all duration-700 ease-out"
+          style={{
+            width: `${clampedProgress}%`,
+            background: 'linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%)',
+          }}
         />
       </div>
       <div className="flex items-center justify-between text-xs">

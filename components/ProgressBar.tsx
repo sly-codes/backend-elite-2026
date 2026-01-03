@@ -1,8 +1,6 @@
 'use client';
 
 /**
- * Progress bar component displaying visual feedback of completion percentage.
- * 
  * @param progress - Percentage value (0-100)
  * @param label - Optional label to display above the progress bar
  */
@@ -24,10 +22,13 @@ export default function ProgressBar({ progress, label }: ProgressBarProps) {
           </span>
         </div>
       )}
-      <div className="w-full h-1.5 bg-[#222222] rounded-full overflow-hidden">
+      <div className="w-full h-1.5 bg-notion-sidebar rounded-full overflow-hidden">
         <div
-          className="h-full bg-notion-text transition-all duration-500 ease-out"
-          style={{ width: `${clampedProgress}%` }}
+          className="h-full transition-all duration-700 ease-out"
+          style={{
+            width: `${clampedProgress}%`,
+            background: 'linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%)',
+          }}
         />
       </div>
     </div>

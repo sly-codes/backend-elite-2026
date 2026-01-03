@@ -25,11 +25,8 @@ const labelColors = {
   Book: 'bg-purple-500/20 text-purple-400 border-purple-500/30',
 };
 
-/**
- * ConceptTable component displays concepts as accordion/collapsible rows.
- * Each concept expands to show description and step-by-step guide.
- * Uses Framer Motion for smooth transitions with no scroll jump.
- */
+
+
 export default function ConceptTable({ concepts, onToggleComplete, isCompleted }: ConceptTableProps) {
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
@@ -39,7 +36,6 @@ export default function ConceptTable({ concepts, onToggleComplete, isCompleted }
 
   return (
     <div className="relative">
-      {/* Vertical line connecting steps */}
       <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-notion-border" />
 
       <div className="space-y-0">
@@ -50,7 +46,6 @@ export default function ConceptTable({ concepts, onToggleComplete, isCompleted }
 
           return (
             <div key={concept.id} className="relative pl-12 pb-3 last:pb-0">
-              {/* Step indicator */}
               <div className="absolute left-0 top-1">
                 {completed ? (
                   <div className="w-4 h-4 rounded-full bg-green-500 border-2 border-notion-sidebar flex items-center justify-center">
@@ -61,9 +56,7 @@ export default function ConceptTable({ concepts, onToggleComplete, isCompleted }
                 )}
               </div>
 
-              {/* Concept accordion */}
               <div className="border border-notion-border rounded-lg bg-notion-sidebar overflow-hidden">
-                {/* Header - Always visible */}
                 <button
                   onClick={() => handleToggle(concept.id)}
                   className="w-full text-left p-4 hover:bg-notion-sidebar/80 transition-colors group"
@@ -98,28 +91,24 @@ export default function ConceptTable({ concepts, onToggleComplete, isCompleted }
                   </div>
                 </button>
 
-                {/* Expanded content */}
                 <AnimatePresence>
                   {isExpanded && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.2, ease: 'easeInOut' }}
+                      transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                       className="overflow-hidden"
                     >
                       <div className="px-4 pb-4 space-y-4 border-t border-notion-border pt-4">
-                        {/* Description */}
                         <div>
                           <h5 className="text-xs font-medium text-notion-text-secondary mb-2">Description</h5>
                           <p className="text-sm text-notion-text-secondary leading-relaxed">{concept.description}</p>
                         </div>
 
-                        {/* Step-by-Step Guide */}
                         <div className="space-y-3">
                           <h5 className="text-xs font-medium text-notion-text-secondary mb-2">Learning Path</h5>
 
-                          {/* Step 1: Watch Video */}
                           {concept.videoUrl && (
                             <div className="bg-notion-bg border border-notion-border rounded-lg p-3 space-y-2">
                               <div className="flex items-center gap-2">
@@ -138,7 +127,6 @@ export default function ConceptTable({ concepts, onToggleComplete, isCompleted }
                             </div>
                           )}
 
-                          {/* Step 2: Read Documentation */}
                           <div className="bg-notion-bg border border-notion-border rounded-lg p-3">
                             <div className="flex items-center justify-between mb-2">
                               <div className="flex items-center gap-2">
@@ -159,7 +147,6 @@ export default function ConceptTable({ concepts, onToggleComplete, isCompleted }
                             </p>
                           </div>
 
-                          {/* Step 3: Mark as Complete */}
                           <div className="bg-notion-bg border border-notion-border rounded-lg p-3">
                             <div className="flex items-center justify-between">
                               <div className="flex items-center gap-2">

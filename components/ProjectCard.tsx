@@ -7,11 +7,7 @@ interface ProjectCardProps {
   challenge: EliteChallenge;
 }
 
-/**
- * ProjectCard component highlights the Elite Challenge for each phase.
- * Displays the project description and a checklist of must-have features.
- * Designed to provide clear, actionable project requirements.
- */
+
 export default function ProjectCard({ challenge }: ProjectCardProps) {
   return (
     <div className="bg-notion-sidebar border border-notion-border rounded-lg p-6 space-y-4">

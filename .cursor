@@ -130,6 +130,10 @@ export const phases: Phase[] = [
   category: string; // ex: 'Auth', 'Database', 'Security'
 }
 
+dfdfdf
+
+dfdf
+
 export interface Phase {
   id: string;
   title: string;

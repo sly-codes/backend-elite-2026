@@ -3,10 +3,7 @@
 import { TARGET_DATE } from '@/constants/roadmap';
 import { useEffect, useState } from 'react';
 
-/**
- * Live countdown timer component displaying time remaining until target date.
- * Updates every second with a clean monospace font for readability.
- */
+
 export default function Countdown() {
   const [timeRemaining, setTimeRemaining] = useState({
     days: 0,
@@ -36,10 +33,8 @@ export default function Countdown() {
       return { days, hours, minutes, seconds };
     };
 
-    // Calculate immediately
     setTimeRemaining(calculateTimeRemaining());
 
-    // Update every second
     const interval = setInterval(() => {
       setTimeRemaining(calculateTimeRemaining());
     }, 1000);
@@ -47,7 +42,6 @@ export default function Countdown() {
     return () => clearInterval(interval);
   }, []);
 
-  // Prevent hydration mismatch
   if (!mounted) {
     return (
       <div className="font-mono text-sm text-notion-text-secondary">

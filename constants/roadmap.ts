@@ -2,7 +2,12 @@
  * Guided Learning Path - Elite Java Backend 2026
  *
  * This roadmap follows a strict "Backend Lifecycle" order:
- * 1. Foundations → 2. Protocols → 3. API Logic → 4. Persistence → 5. Advanced → 6. Cloud/Scale
+ * 1. Foundations 
+ *  2. Protocols 
+ *  3. API Logic 
+ * 4. Persistence → 
+ * 5. Advanced → 
+ * 6. Cloud/Scale
  *
  * Each concept includes:
  * - description: Deep dive explanation
@@ -13,9 +18,9 @@
 export interface Concept {
   id: string;
   name: string;
-  description: string; // Deep dive explanation
-  docUrl: string; // Primary documentation link
-  videoUrl?: string; // Optional YouTube video ID for intro
+  description: string; 
+  docUrl: string; 
+  videoUrl?: string; 
   label: 'Doc' | 'Video' | 'Code' | 'Book';
   completed: boolean;
 }
@@ -29,13 +34,13 @@ export interface Video {
 export interface EliteChallenge {
   title: string;
   description: string;
-  mustHaveFeatures: string[]; // List of must-have features for the project
+  mustHaveFeatures: string[];
 }
 
 export interface Phase {
   id: string;
   title: string;
-  coreConcepts: string[]; // Badge list (e.g., "Networking", "Security", "Architecture")
+  coreConcepts: string[]; 
   concepts: Concept[];
   videos: Video[];
   eliteChallenge: EliteChallenge;
@@ -94,10 +99,10 @@ export const phases: Phase[] = [
         completed: false,
       },
       {
-        id: 'git',
-        name: 'Git & Version Control',
+        id: 'git-github',
+        name: 'Git & Github Version Control',
         description:
-          'Industry standard for collaboration and code management. Every backend project uses Git. Master branches, merges, rebases, and collaborative workflows.',
+          'Industry standard for collaboration and code management. Every backend project uses Git and Github. Master branches, merges, rebases, and collaborative workflows.',
         docUrl: 'https://git-scm.com/doc',
         videoUrl: 'USjZcfj8yxE',
         label: 'Doc',
@@ -823,7 +828,7 @@ export const resourceHub: ResourceLink[] = [
     category: 'Books',
   },
   {
-    name: 'IntelliJ IDEA',
+    name: 'IntelliJ IDEA Ultimate',
     url: 'https://www.jetbrains.com/idea/',
     category: 'Tools',
   },
@@ -835,6 +840,21 @@ export const resourceHub: ResourceLink[] = [
   {
     name: 'Docker Desktop',
     url: 'https://www.docker.com/products/docker-desktop',
+    category: 'Tools',
+  },
+  {
+    name: 'RedisInsight',
+    url: 'https://redis.io/insight/',
+    category: 'Tools',
+  },
+  {
+    name: 'DBeaver',
+    url: 'https://dbeaver.io/',
+    category: 'Tools',
+  },
+  {
+    name: 'kubectl',
+    url: 'https://kubernetes.io/docs/tasks/tools/',
     category: 'Tools',
   },
 ];
