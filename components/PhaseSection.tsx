@@ -17,21 +17,33 @@ interface PhaseSectionProps {
   };
   onToggleConcept: (conceptId: string) => void;
   isConceptCompleted: (conceptId: string) => boolean;
-  defaultExpanded?: boolean; 
+  isExpanded: boolean;
+  onToggleExpanded: () => void;
 }
-
 
 export default function PhaseSection({
   phase,
   phaseProgress,
   onToggleConcept,
   isConceptCompleted,
-  defaultExpanded = false,
+  isExpanded,
+  onToggleExpanded,
 }: PhaseSectionProps) {
-  const [isExpanded, setIsExpanded] = useState(defaultExpanded);
+  const [expandedSections, setExpandedSections] = useState<{
+    learningPath: boolean;
+    videoGallery: boolean;
+    eliteChallenge: boolean;
+  }>({
+    learningPath: true, // Expanded by default
+    videoGallery: false,
+    eliteChallenge: false,
+  });
 
-  const toggleExpanded = () => {
-    setIsExpanded(!isExpanded);
+  const toggleSection = (section: keyof typeof expandedSections) => {
+    setExpandedSections((prev: typeof expandedSections) => ({
+      ...prev,
+      [section]: !prev[section],
+    }));
   };
 
   const isCompleted = phaseProgress.progress === 100;
@@ -39,7 +51,7 @@ export default function PhaseSection({
   return (
     <section className="bg-notion-sidebar border border-notion-border rounded-lg overflow-hidden">
       <button
-        onClick={toggleExpanded}
+        onClick={onToggleExpanded}
         className="w-full text-left p-6 hover:bg-notion-sidebar/80 transition-colors group"
       >
         <div className="flex items-start justify-between gap-4">
@@ -91,45 +103,129 @@ export default function PhaseSection({
             transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
             className="overflow-hidden"
           >
-            <div className="px-6 pb-6 pt-4 space-y-8 border-t border-notion-border">
-              <div className="space-y-4">
-                <h3 className="text-lg font-medium text-notion-text">Learning Path</h3>
-                <ConceptTable
-                  concepts={phase.concepts}
-                  onToggleComplete={onToggleConcept}
-                  isCompleted={isConceptCompleted}
-                />
+            <div className="px-6 pb-6 pt-4 space-y-4 border-t border-notion-border">
+              <div className="border border-notion-border rounded-lg bg-notion-bg overflow-hidden">
+                <button
+                  onClick={() => toggleSection('learningPath')}
+                  className="w-full text-left p-4 hover:bg-notion-sidebar transition-colors group flex items-center justify-between"
+                >
+                  <h3 className="text-lg font-medium text-notion-text">Learning Path</h3>
+                  <ChevronDown
+                    size={18}
+                    className={`text-notion-text-secondary group-hover:text-notion-text flex-shrink-0 transition-all duration-200 ${
+                      expandedSections.learningPath ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+
+                <AnimatePresence>
+                  {expandedSections.learningPath && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-4 pb-4 border-t border-notion-border">
+                        <ConceptTable
+                          concepts={phase.concepts}
+                          onToggleComplete={onToggleConcept}
+                          isCompleted={isConceptCompleted}
+                        />
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
 
               {phase.videos.length > 0 && (
-                <div className="space-y-4">
-                  <h3 className="text-lg font-medium text-notion-text">Video Gallery</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {phase.videos.map((video) => (
-                      <div
-                        key={video.id}
-                        className="bg-notion-bg border border-notion-border rounded-lg overflow-hidden"
+                <div className="border border-notion-border rounded-lg bg-notion-bg overflow-hidden">
+                  <button
+                    onClick={() => toggleSection('videoGallery')}
+                    className="w-full text-left p-4 hover:bg-notion-sidebar transition-colors group flex items-center justify-between"
+                  >
+                    <h3 className="text-lg font-medium text-notion-text">
+                      Video Gallery (Others resources you can watch to improve your skills)
+                    </h3>
+                    <ChevronDown
+                      size={18}
+                      className={`text-notion-text-secondary group-hover:text-notion-text flex-shrink-0 transition-all duration-200 ${
+                        expandedSections.videoGallery ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
+
+                  <AnimatePresence>
+                    {expandedSections.videoGallery && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                        className="overflow-hidden"
                       >
-                        <div className="aspect-video">
-                          <iframe
-                            src={`https://www.youtube.com/embed/${video.youtubeId}`}
-                            title={video.title}
-                            className="w-full h-full"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                          />
+                        <div className="px-4 pb-4 border-t border-notion-border pt-4">
+                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            {phase.videos.map((video) => (
+                              <div
+                                key={video.id}
+                                className="bg-notion-sidebar border border-notion-border rounded-lg overflow-hidden"
+                              >
+                                <div className="aspect-video">
+                                  <iframe
+                                    src={`https://www.youtube.com/embed/${video.youtubeId}`}
+                                    title={video.title}
+                                    className="w-full h-full"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                  />
+                                </div>
+                                <div className="p-3">
+                                  <p className="text-sm text-notion-text-secondary">
+                                    {video.title}
+                                  </p>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
                         </div>
-                        <div className="p-3">
-                          <p className="text-sm text-notion-text-secondary">{video.title}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               )}
 
-              <div>
-                <ProjectCard challenge={phase.eliteChallenge} />
+              {/* Elite Challenge Section */}
+              <div className="border border-notion-border rounded-lg bg-notion-bg overflow-hidden">
+                <button
+                  onClick={() => toggleSection('eliteChallenge')}
+                  className="w-full text-left p-4 hover:bg-notion-sidebar transition-colors group flex items-center justify-between"
+                >
+                  <h3 className="text-lg font-medium text-notion-text">Elite Challenge</h3>
+                  <ChevronDown
+                    size={18}
+                    className={`text-notion-text-secondary group-hover:text-notion-text flex-shrink-0 transition-all duration-200 ${
+                      expandedSections.eliteChallenge ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+
+                <AnimatePresence>
+                  {expandedSections.eliteChallenge && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-4 pb-4 border-t border-notion-border pt-4">
+                        <ProjectCard challenge={phase.eliteChallenge} />
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             </div>
           </motion.div>

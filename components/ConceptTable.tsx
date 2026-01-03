@@ -35,7 +35,7 @@ export default function ConceptTable({ concepts, onToggleComplete, isCompleted }
   };
 
   return (
-    <div className="relative">
+    <div className="relative pt-2">
       <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-notion-border" />
 
       <div className="space-y-0">

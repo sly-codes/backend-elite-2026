@@ -6,12 +6,15 @@ import PhaseSection from '@/components/PhaseSection';
 import ResourceHub from '@/components/ResourceHub';
 import { phases, resourceHub } from '@/constants/roadmap';
 import { useRoadmapPersistence } from '@/lib/hooks';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 
 
 export default function Home() {
   const { toggleConcept, isCompleted, getPhaseProgress, getGlobalProgress } =
     useRoadmapPersistence();
+  const [expandedPhaseId, setExpandedPhaseId] = useState<string | null>(
+    phases[0]?.id || null
+  );
 
   const overallProgress = useMemo(() => {
     const allConceptIds = phases.flatMap((phase) => phase.concepts.map((concept) => concept.id));
@@ -24,6 +27,10 @@ export default function Home() {
       return getPhaseProgress(conceptIds);
     });
   }, [getPhaseProgress]);
+
+  const handleTogglePhase = (phaseId: string) => {
+    setExpandedPhaseId((prev) => (prev === phaseId ? null : phaseId));
+  };
 
   return (
     <main className="min-h-screen bg-notion-bg text-notion-text">
@@ -38,7 +45,8 @@ export default function Home() {
               phaseProgress={phaseProgresses[index]}
               onToggleConcept={toggleConcept}
               isConceptCompleted={isCompleted}
-              defaultExpanded={index === 0} 
+              isExpanded={expandedPhaseId === phase.id}
+              onToggleExpanded={() => handleTogglePhase(phase.id)}
             />
           ))}
         </div>
