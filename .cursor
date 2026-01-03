@@ -115,3 +115,26 @@ export const phases: Phase[] = [
     eliteChallenge: { title: 'Cloud-Native Deployment', description: 'Deploy your entire Spring Boot + Postgres + Redis stack on a VPS or Cloud with Docker Compose.' }
   }
 ];
+
+
+
+
+
+1. La Nouvelle Vision ArchitecturelleLien Concept-Vidéo : Chaque Concept possèdera désormais son propre lien vidéo intégré. La vidéo sert d'introduction (le "quoi"), et la doc sert d'approfondissement (le "comment").Double Barre de Progression : * Phase Progress : Chaque phase affiche son % de complétion.Global Progress : La moyenne pondérée de toutes les phases.La "Gallery" devient le "Labo" : On la garde pour les ressources bonus que l'utilisateur veut sauvegarder lui-même, mais le flux principal est linéaire.2. Intégration des Sujets d'Expertise (Ta liste YouTube)J'ai réorganisé ta liste de sujets pour qu'ils s'insèrent logiquement dans la progression Java/Spring Boot. On ne peut pas faire du "Caching" avant de savoir faire du "CRUD".PhaseSujets intégrés de ta liste01: FoundationsHigh-level understanding, Config management, Logging, Testing, Code quality.02: NetworkingHTTP protocol, OpenAPI standards (Swagger), Serialization/Deserialization (JSON).03: Core APIRouting, Handlers/Controllers/Services, Middlewares, Validation & Transformation, Request context.04: PersistenceCRUD deepdive, Databases, Business Logic Layer (BLL), Object storage.05: Advanced BackendAuth/Auth, Security, Caching, Transactional emails, Task queuing & Scheduling, Webhooks.06: InfrastructureScaling, Concurrency, Error handling, Graceful shutdown, DevOps, 12 Factor App.3. Nouveau Schéma de Données (Interface)Voici comment la structure doit évoluer pour Cursor :TypeScriptexport interface Concept {
+  id: string;
+  name: string;
+  description: string;
+  docUrl: string;
+  videoUrl?: string; // Optionnel : lien YouTube spécifique au concept
+  completed: boolean;
+  category: string; // ex: 'Auth', 'Database', 'Security'
+}
+
+export interface Phase {
+  id: string;
+  title: string;
+  progress: number; // Calculé dynamiquement
+  concepts: Concept[];
+  bonusVideos: Video[]; // L'ancienne gallery devient des ressources bonus
+  eliteChallenge: EliteChallenge;
+}

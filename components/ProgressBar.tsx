@@ -24,7 +24,7 @@ export default function ProgressBar({ progress, label }: ProgressBarProps) {
           </span>
         </div>
       )}
-      <div className="w-full h-1.5 bg-notion-sidebar rounded-full overflow-hidden">
+      <div className="w-full h-1.5 bg-[#222222] rounded-full overflow-hidden">
         <div
           className="h-full bg-notion-text transition-all duration-500 ease-out"
           style={{ width: `${clampedProgress}%` }}
