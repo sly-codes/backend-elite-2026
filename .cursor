@@ -1,0 +1,52 @@
+1. Le Programme "Elite Java Backend" (12 Mois)
+Ce plan est conçu pour faire de toi un ingénieur capable de gérer des millions de requêtes.
+
+Phase 1 : Fondations & Algorithmique (Mois 1-2)
+Objectif : Maîtriser la logique avant le langage.
+
+Cours : CS50x Harvard (Concepts de base) + Introduction à Java (Syntaxe, Types, Boucles).
+
+Concepts : Structures de données (Arrays, Lists, Maps), Complexité (Big O).
+
+Projet : Créer un simulateur de système de fichiers simple en ligne de commande.
+
+Phase 2 : Java Avancé & Programmation Orientée Objet (Mois 3-4)
+Objectif : Comprendre comment Java fonctionne sous le capot.
+
+Concepts : POO (Héritage, Interfaces, Polymorphisme), Exceptions, Streams API, Optional, et Multi-threading (Concurrency).
+
+Outils : Maven ou Gradle (Gestionnaires de dépendances), JUnit 5 (Tests unitaires).
+
+Ressource : Livre Effective Java de Joshua Bloch.
+
+Phase 3 : Persistance des Données & SQL (Mois 5-6)
+Objectif : Stocker et manipuler des données de manière pro.
+
+Stack : PostgreSQL, JDBC, puis Hibernate / JPA (L'ORM standard).
+
+Concepts : Relations (1:N, N:N), Transactions ACID, Indexation, Caching (Redis).
+
+Projet : Créer un moteur de gestion de stock complexe avec historique des transactions.
+
+Phase 4 : L'Ecosystème Spring Boot (Mois 7-8)
+Objectif : Devenir productif avec le framework leader du marché.
+
+Concepts : Dependency Injection (IoC), Spring MVC (REST APIs), Spring Security (JWT, OAuth2), Validation.
+
+Projet : Une API de plateforme e-learning avec gestion des rôles (Étudiant/Prof) et paiements.
+
+Phase 5 : Microservices & Cloud Native (Mois 9-10)
+Objectif : Apprendre à découper des applications massives.
+
+Stack : Spring Cloud, Docker, Docker Compose, Postman.
+
+Concepts : API Gateway, Service Discovery, Config Server, Communication asynchrone (RabbitMQ ou Kafka).
+
+Projet : Une architecture de 3 microservices communiquant entre eux.
+
+Phase 6 : Architecture Élite & Déploiement (Mois 11-12)
+Objectif : Maîtriser l'infrastructure.
+
+Concepts : CI/CD (GitHub Actions), Kubernetes (K8s), Monitoring (Prometheus/Grafana), System Design.
+
+Projet Final : Un système de streaming vidéo simplifié ou un système de trading en temps réel.
