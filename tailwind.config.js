@@ -9,16 +9,18 @@ module.exports = {
     extend: {
       colors: {
         'notion-bg': '#000000',
-        'notion-sidebar': '#191919',
-        'notion-border': '#2F2F2F',
+        'notion-sidebar': '#111111',
+        'notion-border': '#222222',
         'notion-text': '#FFFFFF',
-        'notion-text-secondary': '#9B9B9B',
+        'notion-text-secondary': '#888888',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
       },
       fontSize: {
-        base: '14px',
+        base: '13px',
+        sm: '12px',
       },
       maxWidth: {
         content: '900px',

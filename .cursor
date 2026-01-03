@@ -50,3 +50,68 @@ Objectif : Maîtriser l'infrastructure.
 Concepts : CI/CD (GitHub Actions), Kubernetes (K8s), Monitoring (Prometheus/Grafana), System Design.
 
 Projet Final : Un système de streaming vidéo simplifié ou un système de trading en temps réel.
+
+
+export const phases: Phase[] = [
+  {
+    id: 'phase-1',
+    title: 'Phase 01: Foundations & Environment',
+    concepts: [
+      { id: 'linux-bash', name: 'Linux Terminal & Bash Scripting', description: 'Master the command line, permissions, and SSH.', resourceLink: 'https://linuxjourney.com/', label: 'Doc', completed: false },
+      { id: 'git-pro', name: 'Git Elite Workflow', description: 'Rebase, Squashing, and Branching strategies.', resourceLink: 'https://git-scm.com/book/en/v2', label: 'Book', completed: false },
+      { id: 'java-syntax', name: 'Java 21+ Syntax', description: 'Modern Java features: Records, Sealed Classes, Pattern Matching.', resourceLink: 'https://dev.java/', label: 'Doc', completed: false }
+    ],
+    videos: [{ id: 'v1', title: 'Linux for Devs', youtubeId: 'gd7BXuK95zQ' }],
+    eliteChallenge: { title: 'CLI Task Manager', description: 'Build a Java CLI tool that persists tasks in a file, with categories and priority levels.' }
+  },
+  {
+    id: 'phase-2',
+    title: 'Phase 02: Computer Networking & HTTP',
+    concepts: [
+      { id: 'http-spec', name: 'HTTP/1.1 vs HTTP/2 vs HTTP/3', description: 'Status codes, Headers, Verbs, and Payload.', resourceLink: 'https://developer.mozilla.org/en-US/docs/Web/HTTP', label: 'Doc', completed: false },
+      { id: 'dns-tls', name: 'DNS, SSL/TLS Encryption', description: 'How the web stays secure (Certificates, Handshakes).', resourceLink: 'https://www.cloudflare.com/learning/ssl/what-is-ssl/', label: 'Doc', completed: false }
+    ],
+    videos: [{ id: 'v2', title: 'HTTP Crash Course', youtubeId: 'iYM2zFP3Zn0' }],
+    eliteChallenge: { title: 'Custom HTTP Server', description: 'Write a basic HTTP server in Java from scratch using Sockets (no frameworks).' }
+  },
+  {
+    id: 'phase-3',
+    title: 'Phase 03: Databases & SQL Mastery',
+    concepts: [
+      { id: 'sql-adv', name: 'Advanced SQL (Joins, Window Functions)', description: 'Writing complex queries for performance.', resourceLink: 'https://sqlzoo.net/', label: 'Code', completed: false },
+      { id: 'jpa-hib', name: 'Hibernate & N+1 Problem', description: 'Mastering the ORM without killing performance.', resourceLink: 'https://hibernate.org/orm/', label: 'Doc', completed: false }
+    ],
+    videos: [{ id: 'v3', title: 'Database Design', youtubeId: 'ztHopE5Wnpc' }],
+    eliteChallenge: { title: 'Bank Schema Design', description: 'Design a DB schema for a bank with ACID transaction support for money transfers.' }
+  },
+  {
+    id: 'phase-4',
+    title: 'Phase 04: Spring Boot & Security (JWT)',
+    concepts: [
+      { id: 'spring-sec', name: 'Spring Security Architecture', description: 'Filters, AuthenticationManager, and Providers.', resourceLink: 'https://spring.io/projects/spring-security', label: 'Doc', completed: false },
+      { id: 'jwt-auth', name: 'JWT & OAuth2 Deep Dive', description: 'Stateless authentication and token refresh logic.', resourceLink: 'https://jwt.io/introduction', label: 'Video', completed: false }
+    ],
+    videos: [{ id: 'v4', title: 'Spring Security + JWT', youtubeId: 'KxqlJblhzfI' }],
+    eliteChallenge: { title: 'Secure API Gateway', description: 'Build a login system with JWT, bcrypt hashing, and Role-Based Access Control (RBAC).' }
+  },
+  {
+    id: 'phase-5',
+    title: 'Phase 05: Performance & Scalability',
+    concepts: [
+      { id: 'redis-cache', name: 'Caching Strategies with Redis', description: 'Write-through, Write-behind, and Cache Eviction.', resourceLink: 'https://redis.io/docs/', label: 'Doc', completed: false },
+      { id: 'kafka-async', name: 'Message Brokers (Kafka)', description: 'Event-driven architecture and asynchronous processing.', resourceLink: 'https://kafka.apache.org/', label: 'Doc', completed: false }
+    ],
+    videos: [{ id: 'v5', title: 'System Design: Caching', youtubeId: 'U3RkDL21fMK' }],
+    eliteChallenge: { title: 'Real-time Notification System', description: 'Build a system that sends emails/alerts asynchronously using a Message Queue.' }
+  },
+  {
+    id: 'phase-6',
+    title: 'Phase 06: The DevOps Engineer',
+    concepts: [
+      { id: 'docker-k8s', name: 'Docker & K8s Orchestration', description: 'Scaling containers in production.', resourceLink: 'https://kubernetes.io/docs/home/', label: 'Doc', completed: false },
+      { id: 'cicd-github', name: 'CI/CD Pipelines', description: 'Automated testing and deployment with GitHub Actions.', resourceLink: 'https://github.com/features/actions', label: 'Doc', completed: false }
+    ],
+    videos: [{ id: 'v6', title: 'Kubernetes in 1 Hour', youtubeId: 'X48VuDVv0do' }],
+    eliteChallenge: { title: 'Cloud-Native Deployment', description: 'Deploy your entire Spring Boot + Postgres + Redis stack on a VPS or Cloud with Docker Compose.' }
+  }
+];

@@ -23,7 +23,7 @@ export default function ResourceHub({ resources }: ResourceHubProps) {
   }, {} as Record<string, ResourceLink[]>);
 
   return (
-    <section className="mb-16">
+    <section className="mb-16 mt-16">
       <h2 className="text-2xl font-semibold text-notion-text mb-8">
         Resource Hub
       </h2>
