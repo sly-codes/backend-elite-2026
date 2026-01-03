@@ -6,19 +6,24 @@ export default function Footer() {
   const authorName = 'sly.codes | Issa Koné';
   const authorEmail = 'ik3576898@gmail.com';
   const githubUrl = 'https://github.com/sly-codes';
-  const linkedinUrl = 'https://linkedin.com/in/kisscoder';
+  const linkedinUrl = 'https://linkedin.com/in/kiss-coder';
 
   return (
     <footer className="w-full mt-24 border-t border-notion-border bg-notion-bg">
       <div className="max-w-5xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Colonne 1 : Identité & Logo */}
           <div className="space-y-4">
-            <img
-              src="/sly.codes.png"
-              alt="Logo"
-              className="h-8 w-auto mb-4 opacity-90 hover:opacity-100 transition-opacity"
-            />
+            <div className="flex items-center gap-2">
+              <img
+                src="/sly.codes.png"
+                alt="Logo"
+                className="h-8 w-auto mb-4 opacity-90 hover:opacity-100 transition-opacity"
+              />
+              <a href="https://sly.codes" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-xs font-medium text-notion-text-secondary hover:text-notion-text transition-colors group">
+                Portfolio
+                <ExternalLink size={10} className="opacity-50" />
+              </a>
+            </div>
             <div>
               <h3 className="text-sm font-semibold text-notion-text">Author</h3>
               <p className="text-sm text-notion-text-secondary mt-1">{authorName}</p>
@@ -73,7 +78,7 @@ export default function Footer() {
               Need help with your backend journey? feel free to contact me.
             </p>
             <a
-              href={`mailto:${authorEmail}?subject=Support Request`}
+              href={`mailto:${authorEmail}`}
               className="inline-flex items-center gap-2 text-xs font-medium text-notion-text-secondary hover:text-notion-text transition-colors group"
             >
               <Mail size={14} className="group-hover:scale-110 transition-transform" />
