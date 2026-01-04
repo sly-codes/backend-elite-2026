@@ -2,11 +2,11 @@
  * Guided Learning Path - Elite Java Backend 2026
  *
  * This roadmap follows a strict "Backend Lifecycle" order:
- * 1. Foundations
- *  2. Protocols
- *  3. API Logic
- * 4. Persistence →
- * 5. Advanced →
+ * 1. Foundations 
+ *  2. Protocols 
+ *  3. API Logic 
+ * 4. Persistence → 
+ * 5. Advanced → 
  * 6. Cloud/Scale
  *
  * Each concept includes:
@@ -18,9 +18,9 @@
 export interface Concept {
   id: string;
   name: string;
-  description: string;
-  docUrl: string;
-  videoUrl?: string;
+  description: string; 
+  docUrl: string; 
+  videoUrl?: string; 
   label: 'Doc' | 'Video' | 'Code' | 'Book';
   completed: boolean;
 }
@@ -40,7 +40,7 @@ export interface EliteChallenge {
 export interface Phase {
   id: string;
   title: string;
-  coreConcepts: string[];
+  coreConcepts: string[]; 
   concepts: Concept[];
   videos: Video[];
   eliteChallenge: EliteChallenge;
@@ -64,7 +64,7 @@ export const phases: Phase[] = [
         description:
           'Master the language basics: variables, control flow, type system, and object-oriented principles. This is the foundation that everything else builds upon.',
         docUrl: 'https://docs.oracle.com/javase/tutorial/',
-        videoUrl: 'xTtL8E4LzTQ',
+        videoUrl: 'eIrMbAQSU34',
         label: 'Doc',
         completed: false,
       },
@@ -84,7 +84,7 @@ export const phases: Phase[] = [
         description:
           'Understanding collections is critical for efficient data manipulation. Learn when to use ArrayList vs LinkedList, HashMap vs TreeMap, and their time complexities.',
         docUrl: 'https://docs.oracle.com/javase/tutorial/collections/',
-        videoUrl: 'CBYHwZcbD-s',
+        videoUrl: 'rWtVo6uIqMs',
         label: 'Doc',
         completed: false,
       },
@@ -104,7 +104,7 @@ export const phases: Phase[] = [
         description:
           'Industry standard for collaboration and code management. Every backend project uses Git and Github. Master branches, merges, rebases, and collaborative workflows.',
         docUrl: 'https://git-scm.com/doc',
-        videoUrl: 'Kr8l7rQGwNs',
+        videoUrl: 'USjZcfj8yxE',
         label: 'Doc',
         completed: false,
       },
@@ -114,7 +114,7 @@ export const phases: Phase[] = [
         description:
           'Most servers run Linux. Understanding commands, file systems, process management, and shell scripting is essential for backend operations and deployment.',
         docUrl: 'https://www.linux.org/pages/download/',
-        videoUrl: 'v392lEyM29A',
+        videoUrl: 'ROjZy1Zb5tc',
         label: 'Doc',
         completed: false,
       },
@@ -124,7 +124,7 @@ export const phases: Phase[] = [
         description:
           'Master logging frameworks (SLF4J, Logback). Understand log levels, structured logging, and how to effectively debug production issues. Critical for troubleshooting.',
         docUrl: 'https://www.slf4j.org/manual.html',
-        videoUrl: 'fEG57C1Xq0k',
+        videoUrl: 'HhUyE_rQVfw',
         label: 'Doc',
         completed: false,
       },
@@ -134,7 +134,7 @@ export const phases: Phase[] = [
         description:
           'JUnit 5, Mockito, Test-Driven Development (TDD), code coverage, and static analysis tools. Writing maintainable, testable code is non-negotiable in professional environments.',
         docUrl: 'https://junit.org/junit5/docs/current/user-guide/',
-        videoUrl: 'Geq60OVyBPg',
+        videoUrl: '2vttLg43i8k',
         label: 'Doc',
         completed: false,
       },
@@ -206,7 +206,7 @@ export const phases: Phase[] = [
         description:
           'Understanding TCP/IP stack, DNS resolution, SSL/TLS encryption, and network layers helps debug production issues and design efficient distributed systems.',
         docUrl: 'https://www.cloudflare.com/learning/network-layer/what-is-tcp-ip/',
-        videoUrl: 'PpsEaqJV_A0', // E5bSumTAHZE
+        videoUrl: 'PpsEaqJV_A0',
         label: 'Doc',
         completed: false,
       },
@@ -251,11 +251,6 @@ export const phases: Phase[] = [
         id: 'rest-api-design',
         title: 'REST API Design Best Practices',
         youtubeId: '7YcW25PHnAA',
-      },
-      {
-        id: 'https-tutorial',
-        title: 'HTTP Protocol Explained',
-        youtubeId: 'UMwQjFzTQXw',
       },
     ],
     eliteChallenge: {
@@ -565,7 +560,7 @@ export const phases: Phase[] = [
         description:
           'Implement fine-grained permissions. Users, roles, and permissions pattern. Critical for multi-tenant applications and enterprise systems.',
         docUrl: 'https://auth0.com/blog/role-based-access-control-rbac/',
-        videoUrl: 'h-9vhFeM3MY',
+        videoUrl: 'V4H_UVDQJlU',
         label: 'Doc',
         completed: false,
       },
@@ -581,21 +576,11 @@ export const phases: Phase[] = [
       },
       {
         id: 'message-queues',
-        name: 'Message Queues (Kafka)',
+        name: 'Message Queues (RabbitMQ / Kafka)',
         description:
           'Asynchronous communication for decoupled systems. Learn pub/sub patterns, event-driven architecture, and how to handle eventual consistency.',
         docUrl: 'https://kafka.apache.org/documentation/',
-        videoUrl: 'SqVfCyfCJqw',
-        label: 'Doc',
-        completed: false,
-      },
-      {
-        id: 'message-queuess',
-        name: 'Message Queues (RabbitMQ)',
-        description:
-          'Asynchronous communication for decoupled systems. Learn pub/sub patterns, event-driven architecture, and how to handle eventual consistency.',
-        docUrl: 'https://www.rabbitmq.com/documentation.html',
-        videoUrl: 'nFxjaVmFj5E',
+        videoUrl: 'mPPhcU7oWDU',
         label: 'Doc',
         completed: false,
       },
@@ -605,7 +590,7 @@ export const phases: Phase[] = [
         description:
           'Protect APIs from abuse and ensure fair usage. Implement rate limiting with Redis, bucket algorithms, and graceful degradation strategies.',
         docUrl: 'https://stripe.com/docs/rate-limits',
-        videoUrl: 'mQCJJqUfn9Y',
+        videoUrl: 'FUOYU_HrGT4',
         label: 'Doc',
         completed: false,
       },
