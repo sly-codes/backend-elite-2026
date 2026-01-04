@@ -2,11 +2,11 @@
  * Guided Learning Path - Elite Java Backend 2026
  *
  * This roadmap follows a strict "Backend Lifecycle" order:
- * 1. Foundations 
- *  2. Protocols 
- *  3. API Logic 
- * 4. Persistence → 
- * 5. Advanced → 
+ * 1. Foundations
+ *  2. Protocols
+ *  3. API Logic
+ * 4. Persistence →
+ * 5. Advanced →
  * 6. Cloud/Scale
  *
  * Each concept includes:
@@ -18,9 +18,9 @@
 export interface Concept {
   id: string;
   name: string;
-  description: string; 
-  docUrl: string; 
-  videoUrl?: string; 
+  description: string;
+  docUrl: string;
+  videoUrl?: string;
   label: 'Doc' | 'Video' | 'Code' | 'Book';
   completed: boolean;
 }
@@ -40,7 +40,7 @@ export interface EliteChallenge {
 export interface Phase {
   id: string;
   title: string;
-  coreConcepts: string[]; 
+  coreConcepts: string[];
   concepts: Concept[];
   videos: Video[];
   eliteChallenge: EliteChallenge;
@@ -64,7 +64,7 @@ export const phases: Phase[] = [
         description:
           'Master the language basics: variables, control flow, type system, and object-oriented principles. This is the foundation that everything else builds upon.',
         docUrl: 'https://docs.oracle.com/javase/tutorial/',
-        videoUrl: 'eIrMbAQSU34',
+        videoUrl: 'xTtL8E4LzTQ',
         label: 'Doc',
         completed: false,
       },
@@ -84,7 +84,7 @@ export const phases: Phase[] = [
         description:
           'Understanding collections is critical for efficient data manipulation. Learn when to use ArrayList vs LinkedList, HashMap vs TreeMap, and their time complexities.',
         docUrl: 'https://docs.oracle.com/javase/tutorial/collections/',
-        videoUrl: 'rWtVo6uIqMs',
+        videoUrl: 'CBYHwZcbD-s',
         label: 'Doc',
         completed: false,
       },
@@ -104,7 +104,7 @@ export const phases: Phase[] = [
         description:
           'Industry standard for collaboration and code management. Every backend project uses Git and Github. Master branches, merges, rebases, and collaborative workflows.',
         docUrl: 'https://git-scm.com/doc',
-        videoUrl: 'USjZcfj8yxE',
+        videoUrl: 'Kr8l7rQGwNs',
         label: 'Doc',
         completed: false,
       },
@@ -114,7 +114,7 @@ export const phases: Phase[] = [
         description:
           'Most servers run Linux. Understanding commands, file systems, process management, and shell scripting is essential for backend operations and deployment.',
         docUrl: 'https://www.linux.org/pages/download/',
-        videoUrl: 'ROjZy1Zb5tc',
+        videoUrl: 'v392lEyM29A',
         label: 'Doc',
         completed: false,
       },
@@ -124,7 +124,7 @@ export const phases: Phase[] = [
         description:
           'Master logging frameworks (SLF4J, Logback). Understand log levels, structured logging, and how to effectively debug production issues. Critical for troubleshooting.',
         docUrl: 'https://www.slf4j.org/manual.html',
-        videoUrl: 'HhUyE_rQVfw',
+        videoUrl: 'fEG57C1Xq0k',
         label: 'Doc',
         completed: false,
       },
@@ -134,7 +134,7 @@ export const phases: Phase[] = [
         description:
           'JUnit 5, Mockito, Test-Driven Development (TDD), code coverage, and static analysis tools. Writing maintainable, testable code is non-negotiable in professional environments.',
         docUrl: 'https://junit.org/junit5/docs/current/user-guide/',
-        videoUrl: '2vttLg43i8k',
+        videoUrl: 'Geq60OVyBPg',
         label: 'Doc',
         completed: false,
       },
@@ -206,7 +206,7 @@ export const phases: Phase[] = [
         description:
           'Understanding TCP/IP stack, DNS resolution, SSL/TLS encryption, and network layers helps debug production issues and design efficient distributed systems.',
         docUrl: 'https://www.cloudflare.com/learning/network-layer/what-is-tcp-ip/',
-        videoUrl: 'PpsEaqJV_A0',
+        videoUrl: 'PpsEaqJV_A0', // E5bSumTAHZE
         label: 'Doc',
         completed: false,
       },
@@ -251,6 +251,11 @@ export const phases: Phase[] = [
         id: 'rest-api-design',
         title: 'REST API Design Best Practices',
         youtubeId: '7YcW25PHnAA',
+      },
+      {
+        id: 'https-tutorial',
+        title: 'HTTP Protocol Explained',
+        youtubeId: 'UMwQjFzTQXw',
       },
     ],
     eliteChallenge: {
@@ -560,7 +565,7 @@ export const phases: Phase[] = [
         description:
           'Implement fine-grained permissions. Users, roles, and permissions pattern. Critical for multi-tenant applications and enterprise systems.',
         docUrl: 'https://auth0.com/blog/role-based-access-control-rbac/',
-        videoUrl: 'V4H_UVDQJlU',
+        videoUrl: 'h-9vhFeM3MY',
         label: 'Doc',
         completed: false,
       },
@@ -576,11 +581,21 @@ export const phases: Phase[] = [
       },
       {
         id: 'message-queues',
-        name: 'Message Queues (RabbitMQ / Kafka)',
+        name: 'Message Queues (Kafka)',
         description:
           'Asynchronous communication for decoupled systems. Learn pub/sub patterns, event-driven architecture, and how to handle eventual consistency.',
         docUrl: 'https://kafka.apache.org/documentation/',
-        videoUrl: 'mPPhcU7oWDU',
+        videoUrl: 'SqVfCyfCJqw',
+        label: 'Doc',
+        completed: false,
+      },
+      {
+        id: 'message-queuess',
+        name: 'Message Queues (RabbitMQ)',
+        description:
+          'Asynchronous communication for decoupled systems. Learn pub/sub patterns, event-driven architecture, and how to handle eventual consistency.',
+        docUrl: 'https://www.rabbitmq.com/documentation.html',
+        videoUrl: 'nFxjaVmFj5E',
         label: 'Doc',
         completed: false,
       },
@@ -590,7 +605,7 @@ export const phases: Phase[] = [
         description:
           'Protect APIs from abuse and ensure fair usage. Implement rate limiting with Redis, bucket algorithms, and graceful degradation strategies.',
         docUrl: 'https://stripe.com/docs/rate-limits',
-        videoUrl: 'FUOYU_HrGT4',
+        videoUrl: 'mQCJJqUfn9Y',
         label: 'Doc',
         completed: false,
       },
@@ -860,3 +875,367 @@ export const resourceHub: ResourceLink[] = [
 ];
 
 export const TARGET_DATE = new Date('2026-12-31T23:59:59');
+
+
+
+
+
+
+
+
+<!-- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+/**
+ * Guided Learning Path - Elite Java Backend 2026
+ */
+
+export interface Concept {
+  id: string;
+  name: string;
+  description: string;
+  docUrl: string;
+  videoUrl?: string;
+  label: 'Doc' | 'Video' | 'Code' | 'Book';
+  completed: boolean;
+}
+
+export interface Video {
+  id: string;
+  title: string;
+  youtubeId: string;
+}
+
+export interface EliteChallenge {
+  title: string;
+  description: string;
+  mustHaveFeatures: string[];
+}
+
+export interface Phase {
+  id: string;
+  title: string;
+  coreConcepts: string[];
+  concepts: Concept[];
+  videos: Video[];
+  eliteChallenge: EliteChallenge;
+}
+
+export interface ResourceLink {
+  name: string;
+  url: string;
+  category: 'Documentation' | 'Books' | 'Tools';
+}
+
+export const phases: Phase[] = [
+  {
+    id: 'phase-1',
+    title: 'Phase 01: Foundations & CS Logic',
+    coreConcepts: ['CS50', 'Java 21', 'Git', 'Linux'],
+    concepts: [
+      {
+        id: 'cs50-logic',
+        name: 'CS50 & Computational Thinking',
+        description: 'La base absolue. Apprends comment les ordinateurs gèrent la mémoire et les algorithmes. Indispensable pour comprendre ce qui se passe sous le capot de Java.',
+        docUrl: 'https://cs50.harvard.edu/x/',
+        videoUrl: '3u1fu6f8Hto',
+        label: 'Video',
+        completed: false,
+      },
+      {
+        id: 'java-fundamentals',
+        name: 'Java Syntax & OOP (Bro Code)',
+        description: 'Maîtrise Java 21+ : types de données, structures de contrôle et les piliers de la POO (Héritage, Polymorphisme). Très différent de la souplesse de JS.',
+        docUrl: 'https://dev.java/learn/',
+        videoUrl: 'xTtL8E4LzTQ',
+        label: 'Video',
+        completed: false,
+      },
+      {
+        id: 'dsa-mastery',
+        name: 'Data Structures & Algorithms',
+        description: 'Savoir quand utiliser une ArrayList vs une LinkedList, ou une HashMap. Crucial pour la performance backend et les entretiens techniques.',
+        docUrl: 'https://www.bigocheatsheet.com/',
+        videoUrl: 'B31LgI4Y4Is',
+        label: 'Doc',
+        completed: false,
+      },
+      {
+        id: 'git-terminal',
+        name: 'Git & Linux Terminal',
+        description: 'Le backend vit dans le terminal. Maîtrise les commandes Bash et le workflow Git pro (branches, merge, rebase).',
+        docUrl: 'https://linuxjourney.com/',
+        videoUrl: 'apGV9Kg7ics',
+        label: 'Code',
+        completed: false,
+      },
+    ],
+    videos: [
+      { id: 'cs50-intro', title: 'Harvard CS50 Full', youtubeId: '3u1fu6f8Hto' },
+      { id: 'java-full', title: 'Java Course for Beginners', youtubeId: 'xTtL8E4LzTQ' },
+    ],
+    eliteChallenge: {
+      title: 'Logic & CLI Suite',
+      description: 'Crée un utilitaire CLI en Java qui traite des fichiers système et trie des données en utilisant différents algorithmes vus dans CS50.',
+      mustHaveFeatures: [
+        'Gestion propre de la mémoire et des types',
+        'Implémentation d\'un algorithme de recherche',
+        'Usage des Records Java 21',
+        'Tests unitaires JUnit 5',
+      ],
+    },
+  },
+  {
+    id: 'phase-2',
+    title: 'Phase 02: Protocols & API Design',
+    coreConcepts: ['HTTP', 'REST', 'OpenAPI', 'JSON'],
+    concepts: [
+      {
+        id: 'http-deep-dive',
+        name: 'HTTP/HTTPS Deep Dive',
+        description: 'Apprends tout sur les Headers, Verbes (GET/POST), et Codes de Statut. C\'est le langage universel du Web.',
+        docUrl: 'https://developer.mozilla.org/en-US/docs/Web/HTTP',
+        videoUrl: 'iYM2zFP3Zn0',
+        label: 'Doc',
+        completed: false,
+      },
+      {
+        id: 'rest-design',
+        name: 'RESTful Architecture',
+        description: 'L\'art de concevoir des APIs propres et scalables. Apprends le design orienté ressources.',
+        docUrl: 'https://restfulapi.net/',
+        videoUrl: '7YcW25PHnAA',
+        label: 'Doc',
+        completed: false,
+      },
+      {
+        id: 'openapi-spec',
+        name: 'API Specs (OpenAPI/Swagger)',
+        description: 'Documenter avant de coder. Le contrat d\'API est le document le plus important pour un dev backend.',
+        docUrl: 'https://swagger.io/specification/',
+        videoUrl: 'wJa5CTIFj7U',
+        label: 'Video',
+        completed: false,
+      },
+    ],
+    videos: [
+      { id: 'http-tutorial', title: 'HTTP Protocol Explained', youtubeId: 'iYM2zFP3Zn0' },
+      { id: 'api-design', title: 'REST API Best Practices', youtubeId: '7YcW25PHnAA' },
+    ],
+    eliteChallenge: {
+      title: 'API Architecture Blueprint',
+      description: 'Conçois une documentation OpenAPI complète pour un système de réservation complexe avec gestion des erreurs.',
+      mustHaveFeatures: [
+        'Définition stricte des schémas JSON',
+        'Gestion des codes d\'erreurs 4xx et 5xx',
+        'Versioning de l\'API',
+        'Collection Postman de test',
+      ],
+    },
+  },
+  {
+    id: 'phase-3',
+    title: 'Phase 03: Spring Boot Mastery',
+    coreConcepts: ['Spring Boot 3', 'IoC/DI', 'MVC', 'Validation'],
+    concepts: [
+      {
+        id: 'spring-core',
+        name: 'Spring Boot 3 & IoC',
+        description: 'Comprendre l\'Inversion de Contrôle et l\'Injection de Dépendances. C\'est ce qui rend Spring si puissant.',
+        docUrl: 'https://spring.io/projects/spring-boot',
+        videoUrl: '9SGDpanrc8U',
+        label: 'Video',
+        completed: false,
+      },
+      {
+        id: 'spring-mvc',
+        name: 'REST Controllers & DTOs',
+        description: 'Crée tes endpoints et utilise les Data Transfer Objects pour séparer tes données API de ton modèle interne.',
+        docUrl: 'https://docs.spring.io/spring-framework/reference/web/webmvc.html',
+        videoUrl: 'xvXb9U8tJDU',
+        label: 'Code',
+        completed: false,
+      },
+      {
+        id: 'validation-handling',
+        name: 'Validation & Error Handling',
+        description: 'Valide les données entrantes avec @Valid et crée un gestionnaire d\'exceptions global propre.',
+        docUrl: 'https://www.baeldung.com/spring-boot-bean-validation',
+        videoUrl: 'tUvBWH_ZpPQ',
+        label: 'Doc',
+        completed: false,
+      },
+    ],
+    videos: [
+      { id: 'sb3-master', title: 'Spring Boot 3 Full Course', youtubeId: '9SGDpanrc8U' },
+    ],
+    eliteChallenge: {
+      title: 'Clean API Framework',
+      description: 'Développe une API de gestion de stock avec une architecture en couches (Controller -> Service -> Repo).',
+      mustHaveFeatures: [
+        'Validation Bean Validation',
+        'Global Exception Advice',
+        'Logging des requêtes avec Interceptor',
+        'DTO Pattern implémenté',
+      ],
+    },
+  },
+  {
+    id: 'phase-4',
+    title: 'Phase 04: Data Persistence',
+    coreConcepts: ['PostgreSQL', 'JPA/Hibernate', 'Flyway', 'ACID'],
+    concepts: [
+      {
+        id: 'postgres-sql',
+        name: 'PostgreSQL Advanced SQL',
+        description: 'Maîtrise les jointures, les index et les contraintes. Ta base de données est le cœur de ton application.',
+        docUrl: 'https://www.postgresql.org/docs/',
+        videoUrl: 'qw--VYLpxG4',
+        label: 'Video',
+        completed: false,
+      },
+      {
+        id: 'jpa-hibernate',
+        name: 'JPA & Hibernate ORM',
+        description: 'Apprends à mapper tes objets Java à tes tables SQL. Maîtrise les relations Many-to-Many et le Lazy Loading.',
+        docUrl: 'https://hibernate.org/orm/documentation/',
+        videoUrl: 'Yv2xctJxE-w',
+        label: 'Doc',
+        completed: false,
+      },
+      {
+        id: 'db-migrations',
+        name: 'Database Migrations (Flyway)',
+        description: 'Apprends à versionner ta base de données comme tu versionnes ton code avec Git.',
+        docUrl: 'https://flywaydb.org/',
+        videoUrl: 'p0meEGB2-mY',
+        label: 'Code',
+        completed: false,
+      },
+    ],
+    videos: [
+      { id: 'pg-full', title: 'PostgreSQL Complete Course', youtubeId: 'qw--VYLpxG4' },
+      { id: 'hibernate-pro', title: 'Hibernate JPA mastery', youtubeId: 'Yv2xctJxE-w' },
+    ],
+    eliteChallenge: {
+      title: 'Relational Store Engine',
+      description: 'Construis la couche de persistance d\'une plateforme e-commerce complexe avec transactions garanties.',
+      mustHaveFeatures: [
+        'Migrations avec Flyway',
+        'Gestion des transactions ACID',
+        'Optimisation du problème N+1',
+        'Soft deletes implémentés',
+      ],
+    },
+  },
+  {
+    id: 'phase-5',
+    title: 'Phase 05: Security & Performance',
+    coreConcepts: ['Spring Security', 'JWT', 'Redis', 'Kafka'],
+    concepts: [
+      {
+        id: 'spring-security-jwt',
+        name: 'Spring Security & JWT',
+        description: 'Protège tes APIs. Implémente une authentification Stateless avec JSON Web Tokens.',
+        docUrl: 'https://docs.spring.io/spring-security/reference/',
+        videoUrl: 'KxqlJblhzfI',
+        label: 'Video',
+        completed: false,
+      },
+      {
+        id: 'redis-caching',
+        name: 'Caching with Redis',
+        description: 'Accélère tes réponses API en mettant en cache les données les plus demandées.',
+        docUrl: 'https://redis.io/docs/',
+        videoUrl: 'OqCK95AS-YE',
+        label: 'Doc',
+        completed: false,
+      },
+      {
+        id: 'kafka-events',
+        name: 'Event-Driven (Kafka)',
+        description: 'Fais communiquer tes services de manière asynchrone pour une scalabilité maximale.',
+        docUrl: 'https://kafka.apache.org/documentation/',
+        videoUrl: 'SqVfCyfCJqw',
+        label: 'Video',
+        completed: false,
+      },
+    ],
+    videos: [
+      { id: 'security-jwt-pro', title: 'Spring Security + JWT 2025', youtubeId: 'KxqlJblhzfI' },
+      { id: 'kafka-intro', title: 'Kafka in 10 minutes', youtubeId: 'SqVfCyfCJqw' },
+    ],
+    eliteChallenge: {
+      title: 'Secure Scalable Notify',
+      description: 'Crée un service qui authentifie les utilisateurs, cache leurs préférences dans Redis et envoie des événements via Kafka.',
+      mustHaveFeatures: [
+        'Auth JWT avec Refresh Token',
+        'Cache d\'invalidation Redis',
+        'Kafka Producer & Consumer',
+        'Role-Based Access Control (RBAC)',
+      ],
+    },
+  },
+  {
+    id: 'phase-6',
+    title: 'Phase 06: Cloud Native & Ops',
+    coreConcepts: ['Docker', 'Kubernetes', 'CI/CD', 'Monitoring'],
+    concepts: [
+      {
+        id: 'docker-containers',
+        name: 'Dockerization',
+        description: 'Conteneurise ton app Spring Boot. C\'est le standard pour déployer en entreprise aujourd\'hui.',
+        docUrl: 'https://docs.docker.com/',
+        videoUrl: 'fqMOX6JJhGo',
+        label: 'Video',
+        completed: false,
+      },
+      {
+        id: 'k8s-orchestra',
+        name: 'Kubernetes Orchestration',
+        description: 'Apprends à gérer des flottes de conteneurs : auto-scaling, auto-healing et déploiement blue/green.',
+        docUrl: 'https://kubernetes.io/docs/',
+        videoUrl: 'd6WC5n9G_sM',
+        label: 'Doc',
+        completed: false,
+      },
+      {
+        id: 'cicd-github',
+        name: 'CI/CD with GitHub Actions',
+        description: 'Automatise tes tests et ton déploiement à chaque "Git Push". Zéro intervention manuelle.',
+        docUrl: 'https://docs.github.com/en/actions',
+        videoUrl: 'R8_veQiYBjI',
+        label: 'Code',
+        completed: false,
+      },
+    ],
+    videos: [
+      { id: 'docker-tutorial', title: 'Docker for Java Devs', youtubeId: 'fqMOX6JJhGo' },
+      { id: 'k8s-tutorial', title: 'Kubernetes Masterclass', youtubeId: 'd6WC5n9G_sM' },
+    ],
+    eliteChallenge: {
+      title: 'The Production Monolith',
+      description: 'Déploie ton API finale sur un cluster Kubernetes avec monitoring complet et pipeline CI/CD.',
+      mustHaveFeatures: [
+        'Dockerfile Multi-stage optimisé',
+        'Manifests Kubernetes (Deploy/Svc)',
+        'Pipeline GitHub Actions complet',
+        'Health Checks & Actuator',
+      ],
+    },
+  },
+];
+
+export const resourceHub: ResourceLink[] = [
+  { name: 'Java Dev Portal (Oracle)', url: 'https://dev.java/learn/', category: 'Documentation' },
+  { name: 'Spring Framework Docs', url: 'https://docs.spring.io/spring-framework/', category: 'Documentation' },
+  { name: 'Baeldung (Guides Java/Spring)', url: 'https://www.baeldung.com/', category: 'Documentation' },
+  { name: 'PostgreSQL Manual', url: 'https://www.postgresql.org/docs/', category: 'Documentation' },
+  { name: 'Effective Java (Bloch)', url: 'https://www.amazon.com/Effective-Java-Joshua-Bloch/dp/0134685997', category: 'Books' },
+  { name: 'Clean Code (Uncle Bob)', url: 'https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882', category: 'Books' },
+  { name: 'IntelliJ IDEA', url: 'https://www.jetbrains.com/idea/', category: 'Tools' },
+  { name: 'Postman (API Testing)', url: 'https://www.postman.com/', category: 'Tools' },
+  { name: 'Docker Desktop', url: 'https://www.docker.com/products/docker-desktop', category: 'Tools' },
+  { name: 'DBeaver (Universal DB Tool)', url: 'https://dbeaver.io/', category: 'Tools' },
+  { name: 'Flyway (DB Migrations)', url: 'https://flywaydb.org/', category: 'Tools' },
+  { name: 'RedisInsight', url: 'https://redis.io/insight/', category: 'Tools' },
+  { name: 'Lens (Kubernetes IDE)', url: 'https://k8slens.dev/', category: 'Tools' },
+];
